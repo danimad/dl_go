@@ -7,7 +7,6 @@ STONE_TO_CHAR = {
     gotypes.Player.white: 'o',
 }
 
-
 def print_move(player, move):
     if move.is_pass:
         move_str = 'passes'
@@ -16,7 +15,6 @@ def print_move(player, move):
     else:
         move_str = '%s%d' % (COLS[move.point.col -1], move.point.row)
     print('%s %s' % (player, move_str))
-
 
 def print_board(board):
     for row in range(board.num_rows, 0, -1):
@@ -27,3 +25,7 @@ def print_board(board):
         print('%d %s' % (row, ''.join(line)))
     print('  ' + COLS[:board.num_cols])
 
+def point_from_coords(coords):
+    col = COLS.index(coords[0]) + 1
+    row = int(coords[1:])
+    return gotypes.Point(row=row, col=col)
