@@ -1,7 +1,7 @@
 import random
 from .base import Agent
 from .helpers import is_point_an_eye
-from ..goboard import Move
+from ..goboard_slow import Move
 from ..gotypes import Point
 
 
